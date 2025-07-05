@@ -1,0 +1,80 @@
+// 変数定義
+
+//-----------------------------------
+//Font
+//------------------------------------
+
+// Font Family
+$f-main: 'Noto Sans JP', sans-serif;
+// $f-point: ;
+
+// root Size
+$fz-root: 16;
+
+// Font Size rem変換
+@mixin rem($size) {
+  font-size: calc(($size / $fz-root) * 1rem);
+}
+
+// Line height
+$lh-main: 1.75;
+
+//line-heightをpxから算出
+@mixin lh($font-size, $height) {
+  line-height: calc($height / $font-size);
+}
+
+
+//-----------------------------------
+//Color
+//-----------------------------------
+$c-white: #FFF;
+$c-white50: rgba(255, 255, 255, .5);
+$c-black: #000;
+
+// $c-main: #;
+// $c-sub: #;
+// $c-point: #;
+// $c-plane: #;
+// $c-pale: #;
+// $c-bg: #;
+;
+
+//-----------------------------------
+//Pass
+//-----------------------------------
+$pass: '../images/';
+
+
+//-----------------------------------
+//Break Point
+//-----------------------------------
+$breakpoints: (
+  sp: 'screen and (max-width: 767px)',
+  pc: 'screen and (min-width: 768px)',
+  pc-wide: 'screen and (min-width: 980px)',
+);
+
+
+// -----------------------------------
+// media query
+// -----------------------------------
+@mixin mq($bp) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}
+
+
+//-----------------------------------
+//Base Width
+//-----------------------------------
+$base-width-sp: 390;
+$base-width-pc: 1536;
+
+
+//-----------------------------------
+//Contents Width
+//-----------------------------------
+$width-main: 1080px;
+$width-wide: 1250px;
